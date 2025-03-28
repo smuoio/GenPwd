@@ -1,0 +1,2 @@
+#define GenPwd_VERSION_MAJOR @GenPwd_VERSION_MAJOR@
+#define GenPwd_VERSION_MINOR @GenPwd_VERSION_MINOR@
