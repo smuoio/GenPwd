@@ -42,7 +42,27 @@ namespace _util_
 	{
 		return (((seed >= _typedef_::MIN_ASCII) && (seed <= _typedef_::MAX_ASCII)) ? _typedef_::TRUE : _typedef_::FALSE);
 	}
+/**
+	 * @fn  template <typename T> genericrandnum()
+	 * @brief generate the random number, create template function
+	 * @return the seed generated
+	 */
+	template <typename T>
+	T genericrandnum()
+	{
+		static T oldseed = 0x0U;
+		T lseed = 0x0U;
+		srand((unsigned)time(NULL) + oldseed);
+		lseed = std::rand()%125;
+		oldseed = lseed;
+		std::cout<<lseed<<std::endl;
+		std::cout<<oldseed<<std::endl;
+		return(lseed);
+	}
+
 }//namespace
+//explicit instantiation definition
+template _typedef_::UINT64 _util_::genericrandnum();
 
 
 
