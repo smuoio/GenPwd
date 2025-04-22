@@ -61,7 +61,8 @@ _typedef_::UINT64 createpwd::createwpwd()
 	_typedef_::UINT64 lcount = 0x0U;
 	GetAccess2t_createpwd()->pwd = GetAccess2t_createpwd()->base_word;
 	do{
-		GetAccess2t_createpwd()->seed = _util_::genrandnum();
+		//GetAccess2t_createpwd()->seed = _util_::genrandnum();
+		GetAccess2t_createpwd()->seed = _util_::genericrandnum<_typedef_::UINT64> ();
 		std::cout<<GetAccess2t_createpwd()->seed<<std::endl;
 		if(_util_::checkrange(GetAccess2t_createpwd()->seed) == _typedef_::TRUE)
 		{
